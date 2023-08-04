@@ -6,3 +6,14 @@
 {% block header%}
     View Stats Page
 {% endblock %}
+{% block content %}
+<div class="dropdown-group">
+  <form action="" method="post" target="_blank">
+    {% csrf_token %}
+      {{ form.team }}
+      <div class="submit-button">
+        <button type="submit" class="submit-button btn btn-primary">Submit</button>
+      </div>
+  </form>
+</div>
+{% endblock %}
