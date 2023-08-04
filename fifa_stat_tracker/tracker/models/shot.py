@@ -11,4 +11,5 @@ class Shot(models.Model):
     on_target = models.BooleanField()
     blocked_by_player = models.BooleanField()
     body_part = models.CharField(max_length=10, choices=[('Foot', 'Foot'), ('Head', 'Head')])
+    minute = models.IntegerField()
     
