@@ -1,4 +1,5 @@
 from django.db import models
+from .team import Team
 
 class Match(models.Model):
     opponent = models.CharField(max_length=20)
@@ -9,3 +10,4 @@ class Match(models.Model):
         ('SF', 'Semi Finals'),
         ('F', 'Finals')
     ])
+    home_team = models.ForeignKey(Team, on_delete=models.CASCADE)
