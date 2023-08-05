@@ -3,6 +3,11 @@
 {% block title %}
   Play Game
 {% endblock %}
-{% block header%}
-    Play Game Page
+{% block header %}
+    Play Game Page for game {{ match.id }}
+{% endblock %}
+{% block content %}
+    <p> Home team: {{ match.home_team }}</p>
+    <p> Opponent: {{ match.opponent }}</p>
+    <p> Round: {{ match.round }} </p>
 {% endblock %}

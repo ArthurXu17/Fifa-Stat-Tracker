@@ -1,0 +1,19 @@
+{% extends 'tracker/base.html'%}
+
+{% block title %}
+  Start Game
+{% endblock %}
+{% block header%}
+    Start Game Page
+{% endblock %}
+{% block content %}
+<div class="dropdown-group">
+  <form action="" method="post" target="_blank">
+    {% csrf_token %}
+      {{ form.as_table }}
+      <div class="submit-button">
+        <button type="submit" class="submit-button btn btn-primary">Submit</button>
+      </div>
+  </form>
+</div>
+{% endblock %}
