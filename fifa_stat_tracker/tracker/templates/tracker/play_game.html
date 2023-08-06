@@ -10,4 +10,28 @@
     <p> Home team: {{ match.home_team }}</p>
     <p> Opponent: {{ match.opponent }}</p>
     <p> Round: {{ match.round }} </p>
+    {% for event in events %}
+      <p> {{ event }} </p>
+    {% endfor %}
+    <form action="" method="post">
+      {% csrf_token %}
+        {{ create_corner_form.as_table }}
+        <div class="submit-button">
+          <button type="submit" name="create_corner" class="submit-button btn btn-primary">Create Corner</button>
+        </div>
+    </form>
+    <form action="" method="post">
+      {% csrf_token %}
+        {{ create_shot_form.as_table }}
+        <div class="submit-button">
+          <button type="submit" name="create_shot" class="submit-button btn btn-primary">Create Shot</button>
+        </div>
+    </form>
+    <form action="" method="post">
+      {% csrf_token %}
+        {{ create_goal_form.as_table }}
+        <div class="submit-button">
+          <button type="submit" name="create_goal" class="submit-button btn btn-primary">Create Goal</button>
+        </div>
+    </form>
 {% endblock %}

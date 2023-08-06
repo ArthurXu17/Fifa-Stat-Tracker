@@ -11,3 +11,14 @@ class Match(models.Model):
         ('F', 'Finals')
     ])
     home_team = models.ForeignKey(Team, on_delete=models.CASCADE)
+    
+    def get_events_sorted(self):
+        shots = list(self.shots.all())
+        goals = list(self.goals.all())
+        corners = list(self.corners.all())
+        shots.extend(corners)
+        shots.extend(goals)
+        return sorted(shots, key=lambda event: event.minute)
+    
+    def get_latest_corner(self):
+        return max(self.corners.all(), key=lambda corner: corner.minute)

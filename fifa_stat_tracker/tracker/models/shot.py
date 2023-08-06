@@ -1,15 +1,11 @@
 from django.db import models
 
-from .corner import Corner
-from .match import Match
-from .player import Player
+from .abstract_shot import AbstractShot
 
-class Shot(models.Model):
-    player = models.ForeignKey(Player, on_delete=models.CASCADE, related_name='shots')
-    match = models.ForeignKey(Match, on_delete=models.CASCADE, related_name='shots')
-    corner = models.ForeignKey(Corner, on_delete=models.CASCADE, related_name='shots', blank=True, null=True)
-    on_target = models.BooleanField()
-    blocked_by_player = models.BooleanField()
-    body_part = models.CharField(max_length=10, choices=[('Foot', 'Foot'), ('Head', 'Head')])
-    minute = models.IntegerField()
+class Shot(AbstractShot):
     
+    def display_information(self):
+        return f"Shot by {self.player.first_name} {self.player.last_name} at {self.minute}'"
+    
+    class Meta:
+        default_related_name = 'shots'
