@@ -19,7 +19,7 @@
             <div class="collapse navbar-collapse" id="navbarContent">      
                 <ul class="nav navbar-nav navbar-right">
                     <li class="nav-item">
-                        <a class="nav-link active" href="{% url 'make_team'%}">Create Team</a>
+                        <a class="nav-link active" href="{% url 'initialize_team'%}">Create Team</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="{% url 'start_game'%}">Start Game</a>
@@ -32,7 +32,7 @@
         </div>
     </nav>
     
-    <h1 class="layout-center">
+    <h1>
     {% block header %} {% endblock %}</h1>
     <div class="container">
         <div class="row">

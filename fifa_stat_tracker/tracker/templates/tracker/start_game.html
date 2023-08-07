@@ -4,15 +4,15 @@
   Start Game
 {% endblock %}
 {% block header%}
-    Start Game Page
+  <h1 class="single_field_form_header">Start Game Page</h1>
 {% endblock %}
 {% block content %}
 <div class="dropdown-group">
   <form action="" method="post" target="_blank">
     {% csrf_token %}
       {{ form.as_table }}
-      <div class="submit-button">
-        <button type="submit" class="submit-button btn btn-primary">Submit</button>
+      <div class="single_field_form_button">
+        <button type="submit" class="btn btn-primary">Submit</button>
       </div>
   </form>
 </div>

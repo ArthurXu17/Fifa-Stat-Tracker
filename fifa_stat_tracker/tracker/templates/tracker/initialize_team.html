@@ -1,16 +1,16 @@
 {% extends 'tracker/base.html'%}
 
 {% block title %}
-  View Stats
+  Make Team
 {% endblock %}
 {% block header%}
-    View Stats Page
+    <h1 class="single_field_form_header">Make Team Page</h1>
 {% endblock %}
 {% block content %}
 <div class="dropdown-group">
   <form action="" method="post" target="_blank">
     {% csrf_token %}
-      {{ form.team }}
+      {{ form.as_table }}
       <div class="single_field_form_button">
         <button type="submit" class="btn btn-primary">Submit</button>
       </div>
