@@ -34,3 +34,18 @@ h1 {
     margin-left: auto;
     margin-right: auto; 
 }
+
+.player-table {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+table.player-table THEAD tr th {
+    width: 150px;
+    border: solid 2px lightgrey
+}
+
+table.player-table TBODY tr td {
+    width: 150px;
+    border: solid 2px lightgrey
+}

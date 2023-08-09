@@ -12,9 +12,7 @@ def play_game_view(request, match_id):
     create_corner_form = CreateCornerForm()
     create_shot_form = CreateShotForm(team=match.home_team)
     create_goal_form = CreateGoalForm(team=match.home_team)
-    if request.method == 'POST':
-        print("post yeah")
-        print(request.POST)
+    if request.method == 'POST': 
         if 'create_corner' in request.POST: 
             minute = request.POST['minute']
             Corner.objects.create(minute=minute, match=match)
