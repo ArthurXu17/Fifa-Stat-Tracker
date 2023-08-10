@@ -6,3 +6,39 @@
 {% block header%}
     View Team Stats Page for team {{ team.name }}
 {% endblock %}
+
+{% block content %}
+  <h3> Player Stats</h3>
+  <table class="player-table">
+    <THEAD>
+      <tr>
+          <th> First Name</th>
+          <th> Last Name</th>
+          <th> Number</th>
+          <th> Shots </th>
+          <th> Blocked Shots </th>
+          <th> Shots on Target</th>
+          <th> GOALS </th>
+          <th> Guhls </th>
+          <th> ASSISTS </th>
+          <th> Uhssists</th>
+      </tr>
+    </THEAD>
+    <TBODY>
+      {% for player in team.players.all %}
+        <tr>
+          <td> {{ player.first_name }} </td>
+          <td> {{ player.last_name }} </td>
+          <td> {{ player.number }} </td>
+          <td> {{ player.num_shots }}</td>
+          <td> {{ player.num_blocked_shots }}</td>
+          <td> {{ player.num_shots_on_target }}</td>
+          <td> {{ player.num_impressive_goals }}</td>
+          <td> {{ player.num_not_impressive_goals }}</td>
+          <td> {{ player.num_impressive_assists }}</td>
+          <td> {{ player.num_not_impressive_assists }}</td>
+        </tr>
+      {% endfor %}
+    </TBODY>
+  </table>
+{% endblock %}
