@@ -13,4 +13,4 @@ class Team(models.Model):
         return self.matches.filter(result='D').count()
     
     def num_losses(self):
-        return self.matches.filter(result='D').count()
+        return self.matches.filter(result='L').count()
