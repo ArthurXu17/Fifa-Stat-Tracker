@@ -10,6 +10,11 @@ class Match(models.Model):
         ('SF', 'Semi Finals'),
         ('F', 'Finals')
     ])
+    result = models.CharField(max_length=15, choices=[
+        ('W', 'Win'),
+        ('D', 'Draw'),
+        ('L', 'Loss'),
+        ('IP', 'In Progress')], default='IP')
     home_team = models.ForeignKey(Team, on_delete=models.CASCADE)
     
     def get_events_sorted(self):

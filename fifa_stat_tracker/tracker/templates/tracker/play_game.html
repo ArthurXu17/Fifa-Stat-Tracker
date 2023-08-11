@@ -16,22 +16,21 @@
     <form action="" method="post">
       {% csrf_token %}
         {{ create_corner_form.as_table }}
-        <div class="submit-button">
-          <button type="submit" name="create_corner" class="submit-button btn btn-primary">Create Corner</button>
-        </div>
+        <button type="submit" name="create_corner" class="btn btn-primary">Create Corner</button>
     </form>
     <form action="" method="post">
       {% csrf_token %}
         {{ create_shot_form.as_table }}
-        <div class="submit-button">
-          <button type="submit" name="create_shot" class="submit-button btn btn-primary">Create Shot</button>
-        </div>
+        <button type="submit" name="create_shot" class="btn btn-primary">Create Shot</button>
     </form>
     <form action="" method="post">
       {% csrf_token %}
         {{ create_goal_form.as_table }}
-        <div class="submit-button">
-          <button type="submit" name="create_goal" class="submit-button btn btn-primary">Create Goal</button>
-        </div>
+        <button type="submit" name="create_goal" class="btn btn-primary">Create Goal</button>
+    </form>
+    <form action="" method="post">
+      {% csrf_token %}
+        {{ match_result_form.as_table }}
+        <button type="submit" name="end_game" class="btn btn-primary">End Game</button>
     </form>
 {% endblock %}

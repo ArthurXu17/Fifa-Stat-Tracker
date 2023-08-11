@@ -8,7 +8,7 @@
 {% endblock %}
 {% block content %}
 <div class="dropdown-group">
-  <form action="" method="post" target="_blank">
+  <form action="" method="post">
     {% csrf_token %}
       {{ form.as_table }}
       <div class="single_field_form_button">
