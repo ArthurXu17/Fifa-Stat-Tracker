@@ -4,7 +4,7 @@
   View Team Stats
 {% endblock %}
 {% block header%}
-    View Team Stats Page for team {{ team.name }}
+    {{ team.name }} ({{team.num_wins}}-{{team.num_draws}}-{{team.num_losses}})
 {% endblock %}
 
 {% block content %}

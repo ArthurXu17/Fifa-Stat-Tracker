@@ -15,7 +15,7 @@ class Match(models.Model):
         ('D', 'Draw'),
         ('L', 'Loss'),
         ('IP', 'In Progress')], default='IP')
-    home_team = models.ForeignKey(Team, on_delete=models.CASCADE)
+    home_team = models.ForeignKey(Team, on_delete=models.CASCADE, related_name='matches')
     
     def get_events_sorted(self):
         shots = list(self.shots.all())
