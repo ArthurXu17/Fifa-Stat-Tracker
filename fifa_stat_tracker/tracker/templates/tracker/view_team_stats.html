@@ -41,53 +41,55 @@
       {% endfor %}
     </TBODY>
   </table>
-  <h3> Team Averages </h3>
-  <table class="team-stats-table">
-    <THEAD>
-      <tr>
-        <th colspan="2"> Stat </th>
-        <th colspan="2"> Wins </th>
-        <th colspan="2"> Draws </th>
-        <th colspan="2"> Losses </th>
-        <th colspan="2"> Overall </th>
-      </tr>
-    </THEAD>
-    <TBODY>
-      <tr>
-        <td colspan="2"></td>
-        <td> Mean </td>
-        <td> Median </td>
-        <td> Mean </td>
-        <td> Median </td>
-        <td> Mean </td>
-        <td> Median </td>
-        <td> Mean </td>
-        <td> Median </td>
-      </tr>
-      {% for row in stat_rows %}
+  {% if stat_rows %}
+    <h3> Team Averages </h3>
+    <table class="team-stats-table">
+      <THEAD>
         <tr>
-          <td colspan="2"> {{ row.stat }}</td>
-          <td> {{ row.win_mean }} </td>
-          <td> {{ row.win_median }} </td>
-          <td> {{ row.draw_mean }} </td>
-          <td> {{ row.draw_median }} </td>
-          <td> {{ row.loss_mean }} </td>
-          <td> {{ row.loss_median }} </td>
-          <td> {{ row.overall_mean }} </td>
-          <td> {{ row.overall_median }} </td>
+          <th colspan="2"> Stat </th>
+          <th colspan="2"> Wins </th>
+          <th colspan="2"> Draws </th>
+          <th colspan="2"> Losses </th>
+          <th colspan="2"> Overall </th>
         </tr>
-      {% endfor %}
-      <tr>
-        <td class="invisible_row"></td>
-        <td class="invisible_row"></td>
-        <td class="invisible_row"></td>
-        <td class="invisible_row"></td>
-        <td class="invisible_row"></td>
-        <td class="invisible_row"></td>
-        <td class="invisible_row"></td>
-        <td class="invisible_row"></td>
-        <td class="invisible_row"></td>
-        <td class="invisible_row"></td>
-      </tr>
-  </table>
+      </THEAD>
+      <TBODY>
+        <tr>
+          <td colspan="2"></td>
+          <td> Mean </td>
+          <td> Median </td>
+          <td> Mean </td>
+          <td> Median </td>
+          <td> Mean </td>
+          <td> Median </td>
+          <td> Mean </td>
+          <td> Median </td>
+        </tr>
+        {% for row in stat_rows %}
+          <tr>
+            <td colspan="2"> {{ row.stat }}</td>
+            <td> {{ row.win_mean }} </td>
+            <td> {{ row.win_median }} </td>
+            <td> {{ row.draw_mean }} </td>
+            <td> {{ row.draw_median }} </td>
+            <td> {{ row.loss_mean }} </td>
+            <td> {{ row.loss_median }} </td>
+            <td> {{ row.overall_mean }} </td>
+            <td> {{ row.overall_median }} </td>
+          </tr>
+        {% endfor %}
+        <tr>
+          <td class="invisible_row"></td>
+          <td class="invisible_row"></td>
+          <td class="invisible_row"></td>
+          <td class="invisible_row"></td>
+          <td class="invisible_row"></td>
+          <td class="invisible_row"></td>
+          <td class="invisible_row"></td>
+          <td class="invisible_row"></td>
+          <td class="invisible_row"></td>
+          <td class="invisible_row"></td>
+        </tr>
+    </table>
+  {% endif %}
 {% endblock %}
