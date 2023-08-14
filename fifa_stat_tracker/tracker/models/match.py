@@ -27,3 +27,21 @@ class Match(models.Model):
     
     def get_latest_corner(self):
         return max(self.corners.all(), key=lambda corner: corner.minute)
+    
+    def num_shots(self):
+        return self.shots.count() + self.goals.count()
+    
+    def num_blocked_shots(self):
+        return self.shots.filter(blocked_by_player=True).count()
+    
+    def num_shots_on_target(self):
+        return self.shots.filter(on_target=True).count() + self.goals.count()
+    
+    def num_goals(self):
+        return self.goals.count()
+    
+    def num_assists(self):
+        return self.goals.filter(assist__isnull=False).count()
+    
+    def num_corners(self):
+        return self.corners.count()

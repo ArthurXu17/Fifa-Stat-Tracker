@@ -35,17 +35,27 @@ h1 {
     margin-right: auto; 
 }
 
-.player-table {
+.player-table, .team-stats-table {
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
 table.player-table THEAD tr th {
-    width: 150px;
+    width: 130px;
     border: solid 2px lightgrey
 }
 
 table.player-table TBODY tr td {
-    width: 150px;
+    width: 130px;
     border: solid 2px lightgrey
+}
+
+table.team-stats-table THEAD tr th, table.team-stats-table TBODY tr td {
+    width: 260px;
+    border: solid 2px lightgrey
+}
+
+table.team-stats-table TBODY tr td.invisible_row {
+    width: 130px;
+    border: None
 }
