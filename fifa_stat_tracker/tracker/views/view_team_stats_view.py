@@ -10,10 +10,10 @@ class ViewTeamStatsView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         team = context['team']
+        stats = [('num_shots', 'Shots'), ('num_blocked_shots', 'Blocked Shots'), ('num_shots_on_target', 'Shots on Target'), 
+                 ('num_goals', 'Goals'), ('num_assists', 'Assists'), ('num_corners', 'Corners')]
+        stat_rows = []
         if team.matches.count() > 0:
-            stats = [('num_shots', 'Shots'), ('num_blocked_shots', 'Blocked Shots'), ('num_shots_on_target', 'Shots on Target'), 
-                     ('num_goals', 'Goals'), ('num_assists', 'Assists'), ('num_corners', 'Corners')]
-            stat_rows = []
             for stat, formatted_stat in stats:
                 win_mean, win_median = team.average_stat_by_result(stat, result='W')
                 draw_mean, draw_median = team.average_stat_by_result(stat, result='D')
@@ -30,5 +30,5 @@ class ViewTeamStatsView(DetailView):
                     'overall_mean': f"{mean:.2f}",
                     'overall_median': median
                 })
-            context.update({'stat_rows': stat_rows})
+        context.update({'stat_rows': stat_rows})
         return context
