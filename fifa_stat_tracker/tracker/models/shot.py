@@ -5,7 +5,7 @@ from .abstract_shot import AbstractShot
 class Shot(AbstractShot):
     
     def display_information(self):
-        verb = "Shot" if self.body_part == "Foot" else "Header"
+        verb = "Header" if self.body_part == "Head" else "Shot"
         on_target = "on target" if self.on_target else "off target"
         corner_suffix = f"generated from corner at {self.corner.minute}'" if self.corner is not None else ""
         blocked = "Blocked" if self.blocked_by_player else ""
