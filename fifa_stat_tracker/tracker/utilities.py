@@ -1,5 +1,11 @@
 from random import randrange
 
+BODY_PART_OPTIONS = [
+    ('Foot', 'Foot'),
+    ('Head', 'Head'),
+    ('Left Foot', 'Left Foot'),
+    ('Right Foot', 'Right Foot')]
+
 def mean(items):
     sum = float(0)
     for item in items:
