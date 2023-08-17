@@ -45,7 +45,7 @@ def play_game_view(request, match_id):
     else: 
         context = {
             'match': match,
-            'events': [event.display_information() for event in match.get_events_sorted()],
+            'events': [event for event in match.get_events_sorted()],
             'create_corner_form': create_corner_form,
             'create_shot_form': create_shot_form,
             'create_goal_form': create_goal_form,

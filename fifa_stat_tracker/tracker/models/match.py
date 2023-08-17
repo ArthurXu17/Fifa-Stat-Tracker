@@ -17,6 +17,9 @@ class Match(models.Model):
         ('IP', 'In Progress')], default='IP')
     home_team = models.ForeignKey(Team, on_delete=models.CASCADE, related_name='matches')
     
+    def __str__(self) -> str:
+        return f"{self.round}: {self.home_team.name} vs {self.opponent}"
+    
     def get_events_sorted(self):
         shots = list(self.shots.all())
         goals = list(self.goals.all())

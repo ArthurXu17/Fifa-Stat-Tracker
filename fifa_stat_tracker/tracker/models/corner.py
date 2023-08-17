@@ -6,4 +6,4 @@ class Corner(models.Model):
     minute = models.IntegerField()
     
     def display_information(self):
-        return f"Corner kick at {self.minute}'"
+        return f"Corner kick"

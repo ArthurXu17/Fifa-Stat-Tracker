@@ -21,7 +21,7 @@ class Goal(AbstractShot):
             goal = f"{header_prefix} {goal} {assist} by {self.assist.first_name} {self.assist.last_name}"
         else:
             goal = f"Unassisted {header_prefix} {goal}"
-        return f"{goal} at {self.minute}' {corner_suffix}"
+        return f"{goal} {corner_suffix}"
     
     class Meta:
         default_related_name = 'goals'
