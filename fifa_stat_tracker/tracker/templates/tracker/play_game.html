@@ -17,34 +17,18 @@
     <div class="play_game_container">
       <div class="form_container top_form_container">
         <div class="corner_form_container">
-          <form action="" method="post">
-            {% csrf_token %}
-            {% crispy create_corner_form %}
-            <button type="submit" name="create_corner" class="btn btn-primary play_game_button">Create Corner</button>
-          </form>
+          {% crispy create_corner_form %}
         </div>
       </div>
       <div class="form_container">
-        <form action="" method="post">
-          {% csrf_token %}
-          {% crispy create_shot_form %}
-          <button type="submit" name="create_shot" class="btn btn-primary play_game_button">Create Shot</button>
-        </form>
+        {% crispy create_shot_form %}
       </div>
       <div class="form_container bottom_form_container">
-        <form action="" method="post">
-          {% csrf_token %}
-          {% crispy create_goal_form %}
-          <button type="submit" name="create_goal" class="btn btn-primary play_game_button">Create Goal</button>
-        </form>
+        {% crispy create_goal_form %}
       </div>
     </div>
     <h3 class="play_game_section_header"> End Game </h3>
     <div class="play_game_container">
-      <form action="" method="post">
-        {% csrf_token %}
-        {% crispy match_result_form %}
-        <button type="submit" name="end_game" class="btn btn-primary play_game_button">End Game</button>
-      </form>
+      {% crispy match_result_form %}
     </div>
 {% endblock %}
