@@ -10,6 +10,9 @@ class Player(models.Model):
     def __str__(self) -> str:
         return f"{self.first_name} {self.last_name} ({self.number})"
     
+    def full_name(self):
+        return f"{self.first_name} {self.last_name}"
+    
     def num_shots(self):
         return self.shots.count() + self.goals.count()
     
@@ -25,8 +28,35 @@ class Player(models.Model):
     def num_not_impressive_goals(self):
         return self.goals.filter(is_impressive_goal=False).count()
     
+    def num_goals(self):
+        return self.num_impressive_goals() + self.num_not_impressive_goals()
+    
     def num_impressive_assists(self):
         return self.goals_assisted_on.filter(is_impressive_assist=True).count()
    
     def num_not_impressive_assists(self):
         return self.goals_assisted_on.filter(is_impressive_assist=False).count()
+    
+    def num_assists(self):
+        return self.num_impressive_assists() + self.num_not_impressive_assists()
+    
+    def num_matches(self):
+        return self.team.matches.count()
+    
+    def num_shots_per_ten(self):
+        return self.num_shots() * 10 / self.num_matches()
+    
+    def num_shots_on_target_per_ten(self):
+        return self.num_shots_on_target() * 10 / self.num_matches()
+    
+    def num_goals_per_ten(self):
+        return  self.num_goals() * 10 / self.num_matches()
+    
+    def num_assists_per_ten(self):
+        return self.num_assists() * 10 / self.num_matches()
+    
+    def goals_per_shot_on_target_percent(self):
+        return self.num_goals() * 100 / self.num_shots_on_target()
+    
+    def shots_on_target_per_shot_percent(self):
+        return self.num_shots_on_target() * 100 / self.num_shots()

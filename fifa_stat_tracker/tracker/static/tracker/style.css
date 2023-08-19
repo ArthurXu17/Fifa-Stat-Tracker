@@ -48,6 +48,15 @@ table.player-table TBODY tr td {
     border: solid 2px lightgrey
 }
 
+table.player-table THEAD tr th.large-cell {
+    width: 200px;
+}
+
+table.player-table THEAD tr td.large-cell {
+    width: 200px;
+}
+
+
 table.team-stats-table THEAD tr th, table.team-stats-table TBODY tr td {
     width: 260px;
     border: solid 2px lightgrey

@@ -1,0 +1,146 @@
+{% extends 'tracker/base.html'%}
+
+{% block title %}
+  Top Players
+{% endblock %}
+{% block header%}
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col">
+            <h3> Shots Per 10 Games </h3>
+            <table class="player-table">
+                <thead>
+                    <tr>
+                        <th>Team</th>
+                        <th class="large-cell">Name</th>
+                        <th class="large-cell">Shots Per 10</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for info in shot_players %}
+                        <tr>
+                            <td> {{ info.team }} </td>
+                            <td class="large-cell"> {{ info.name }}</td>
+                            <td class="large-cell"> {{ info.num_shots_per_ten }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="col">
+            <h3> Shots On Target Per 10 Games </h3>
+            <table class="player-table">
+                <thead>
+                    <tr>
+                        <th>Team</th>
+                        <th class="large-cell">Name</th>
+                        <th class="large-cell">Shots On Target Per 10</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for info in shot_on_target_players %}
+                        <tr>
+                            <td> {{ info.team }} </td>
+                            <td class="large-cell"> {{ info.name }}</td>
+                            <td class="large-cell"> {{ info.num_shots_on_target_per_ten }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h3> Goals Per 10 Games </h3>
+            <table class="player-table">
+                <thead>
+                    <tr>
+                        <th>Team</th>
+                        <th class="large-cell">Name</th>
+                        <th class="large-cell">Goals Per 10</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for info in goal_players %}
+                        <tr>
+                            <td> {{ info.team }} </td>
+                            <td class="large-cell"> {{ info.name }}</td>
+                            <td class="large-cell"> {{ info.num_goals_per_ten }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="col">
+            <h3> Assists Per 10 Games </h3>
+            <table class="player-table">
+                <thead>
+                    <tr>
+                        <th>Team</th>
+                        <th class="large-cell">Name</th>
+                        <th class="large-cell">Assists Per 10</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for info in assist_players %}
+                        <tr>
+                            <td> {{ info.team }} </td>
+                            <td class="large-cell"> {{ info.name }}</td>
+                            <td class="large-cell"> {{ info.num_assists_per_ten }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <h3>Percentage Of Shots That Are On Target</h3>
+    <p>* At least 10 shots</p>
+    <table class="player-table">
+        <thead>
+            <tr>
+                <th>Team</th>
+                <th class="large-cell">Name</th>
+                <th>Shots On Target</th>
+                <th>Shots</th>
+                <th>Percentage</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for info in shot_on_target_percent_players %}
+                <tr>
+                    <td> {{ info.team }} </td>
+                    <td class="large-cell"> {{ info.name }}</td>
+                    <td> {{ info.shots_on_target }}</td>
+                    <td> {{ info.shots }}</td>
+                    <td> {{ info.shots_on_target_per_shot_percent }}%</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h3>Percentage Of Shots On Target That Are Goals</h3>
+    <p>* At least 5 shots on target</p>
+    <table class="player-table">
+        <thead>
+            <tr>
+                <th>Team</th>
+                <th class="large-cell">Name</th>
+                <th>Goals</th>
+                <th>Shots On Target</th>
+                <th>Percentage</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for info in goal_percent_players %}
+                <tr>
+                    <td> {{ info.team }} </td>
+                    <td class="large-cell"> {{ info.name }}</td>
+                    <td> {{ info.goals }}</td>
+                    <td> {{ info.shots_on_target }}</td>
+                    <td> {{ info.goals_per_shot_on_target_percent }}%</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
