@@ -6,6 +6,18 @@ BODY_PART_OPTIONS = [
     ('Left Foot', 'Left Foot'),
     ('Right Foot', 'Right Foot')]
 
+POSITION_OPTIONS = [
+    ('LF', 'Left Forward'),
+    ('CF', 'Centre Forward'),
+    ('RF', 'Right Forward'),
+    ('LM', 'Left Midfield'),
+    ('CM', 'Centre Midfield'),
+    ('RM', 'Right Midfield'),
+    ('LB', 'Left Back'),
+    ('CB', 'Centre Back'),
+    ('RB', 'Right Back'),
+    ('GK', 'Goalkeeper')]
+
 def mean(items):
     sum = float(0)
     for item in items:

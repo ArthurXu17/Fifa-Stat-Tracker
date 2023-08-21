@@ -36,6 +36,7 @@ body h1 {
 .player-table, .team-stats-table {
     margin-top: 20px;
     margin-bottom: 20px;
+    table-layout: fixed;
 }
 
 table.player-table THEAD tr th {
@@ -52,13 +53,26 @@ table.player-table THEAD tr th.large-cell {
     width: 200px;
 }
 
-table.player-table THEAD tr td.large-cell {
+table.player-table TBODY tr td.large-cell {
     width: 200px;
 }
 
+table.player-table THEAD tr th.small-cell {
+    width: 40px;
+}
 
-table.team-stats-table THEAD tr th, table.team-stats-table TBODY tr td {
+table.player-table TBODY tr td.small-cell {
+    width: 40px;
+}
+
+
+table.team-stats-table THEAD tr th {
     width: 260px;
+    border: solid 2px lightgrey
+}
+
+table.team-stats-table TBODY tr td {
+    width: 130px;
     border: solid 2px lightgrey
 }
 

@@ -11,7 +11,8 @@ def make_team_view(request, team_id):
         first_name = request.POST['first_name']
         last_name = request.POST['last_name']
         number = request.POST['number']
-        Player.objects.create(first_name=first_name, last_name=last_name, number=number, team=team)
+        position = request.POST['position']
+        Player.objects.create(first_name=first_name, last_name=last_name, number=number, team=team, position=position)
         return redirect(f"/tracker/make_team/{team_id}")
     else:
         context = {"team": team,
