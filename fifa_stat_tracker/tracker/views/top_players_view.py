@@ -18,6 +18,7 @@ class TopPlayersView(TemplateView):
                  'name': p.full_name(),
                  'team': p.team.name,
                  'position': p.position,
+                 'overall': p.overall,
                  stat: f'{getattr(p, stat)():.2f}'} for p in top_players]
     
     def get_context_data(self, **kwargs):

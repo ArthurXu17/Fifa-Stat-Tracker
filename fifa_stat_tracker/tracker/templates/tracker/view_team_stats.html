@@ -15,6 +15,7 @@
           <th> First Name</th>
           <th> Last Name</th>
           <th class="small-cell"> #</th>
+          <th class="small-cell"> Ovr.</th>
           <th class="small-cell"> Pos.</th>
           <th> Shots </th>
           <th> Blocked Shots </th>
@@ -31,10 +32,8 @@
           <td> {{ player.first_name }} </td>
           <td> {{ player.last_name }} </td>
           <td class="small-cell"> {{ player.number }} </td>
-          <td class="small-cell"> 
-            {% if player.position %}
-              {{ player.position }}
-            {% endif %} </td>
+          <td class="small-cell"> {{ player.overall }}</td>
+          <td class="small-cell"> {{ player.position }}</td>
           <td> {{ player.num_shots }}</td>
           <td> {{ player.num_blocked_shots }}</td>
           <td> {{ player.num_shots_on_target }}</td>

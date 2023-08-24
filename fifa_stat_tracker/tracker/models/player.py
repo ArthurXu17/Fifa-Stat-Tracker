@@ -7,6 +7,7 @@ class Player(models.Model):
     last_name = models.CharField(max_length=20)
     number = models.IntegerField()
     position = models.CharField(max_length=20, choices=POSITION_OPTIONS)
+    overall = models.IntegerField()
     team = models.ForeignKey(Team, on_delete=models.CASCADE, related_name='players')
     
     def __str__(self) -> str:
