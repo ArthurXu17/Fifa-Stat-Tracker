@@ -1,15 +1,10 @@
 from django.db import models
 from .team import Team
+from tracker.utilities import ROUND_OPTIONS
 
 class Match(models.Model):
     opponent = models.CharField(max_length=20)
-    round = models.CharField(max_length=20, choices=[
-        ('GR', 'Group Stage'),
-        ('R16', 'Round of 16'),
-        ('QF', 'Quarter Finals'),
-        ('SF', 'Semi Finals'),
-        ('F', 'Finals')
-    ])
+    round = models.CharField(max_length=20, choices=ROUND_OPTIONS)
     result = models.CharField(max_length=15, choices=[
         ('W', 'Win'),
         ('D', 'Draw'),

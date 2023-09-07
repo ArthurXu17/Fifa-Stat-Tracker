@@ -1,0 +1,39 @@
+{% extends 'tracker/base.html'%}
+
+{% block title %}
+  User Stats
+{% endblock %}
+{% block header%}
+{% endblock %}
+
+{% block content %}
+    <h3> Records By Rounds </h3>
+    <div class="play_game_container">
+        {% for record in records_by_rounds %}
+          <p class="event"> {{record }}</p>
+        {% endfor %}
+      </div>
+    <h3> Opponents Sorted By Records </h3>
+    <table class="player-table">
+        <thead>
+            <tr>
+                <th>Opponent</th>
+                <th>Wins</th>
+                <th>Draws</th>
+                <th>Losses</th>
+                <th>Pct.</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in records_by_opponents %}
+                <tr>
+                    <td> {{ record.description }} </td>
+                    <td> {{ record.num_wins }}</td>
+                    <td> {{ record.num_draws }}</td>
+                    <td> {{ record.num_losses }}</td>
+                    <td> {{ record.win_percentage }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

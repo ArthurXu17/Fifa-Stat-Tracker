@@ -7,3 +7,9 @@ class Corner(models.Model):
     
     def display_information(self):
         return f"Corner kick"
+    
+    def num_shots_generated(self):
+        return self.shots.count()
+    
+    def num_goals_generated(self):
+        return self.goals.count()
