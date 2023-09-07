@@ -121,3 +121,16 @@ table.team-stats-table TBODY tr td.invisible_row {
 .play_game_button {
     margin-top: 10px;
 }
+
+.stats_chart {
+    margin: 30px;
+    margin-top: 10px;
+}
+
+.pie_chart {
+    width: 400px;
+}
+
+.bar_chart {
+    width: 700px;
+}

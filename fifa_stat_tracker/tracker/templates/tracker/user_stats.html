@@ -7,6 +7,53 @@
 {% endblock %}
 
 {% block content %}
+    <h3> Corner Kick Results </h3>
+    <div class="pie_chart stats_chart">
+    <canvas id="corner_kick"></canvas></div>
+    <h3> Most Common Assist Patterns </h3>
+    <div class="bar_chart stats_chart">
+    <canvas id="detailed_assist"></canvas></div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+    const corner_kick_ctx = document.getElementById('corner_kick').getContext('2d');
+    const corner_kick_chart = new Chart(corner_kick_ctx, {
+        type: 'pie',
+        data: {
+          labels : ['No Shots', '1 Shot', '2+ Shots', 'Goal'],
+            datasets: [{
+              label: "Number of Corners",
+              data : [{{corner_stats.num_no_shot_corners}},
+                      {{corner_stats.num_one_shot_corners}},
+                      {{corner_stats.num_multi_shot_corners}},
+                      {{corner_stats.num_goal_corners}},],
+              backgroundColor: [
+                'rgb(22, 124, 201)',
+                'rgb(77, 155, 214)',
+                'rgb(77, 182, 214)',
+                'rgb(99, 209, 242)',
+                ]
+            }]
+        }
+    });
+    const assist_pattern_ctx = document.getElementById('detailed_assist').getContext('2d');
+    const assist_pattern_chart = new Chart(assist_pattern_ctx, {
+        type: 'bar',
+        data: {
+          labels : [{% for info in assist_patterns %}
+                        '{{ info.0 }}',
+                    {% endfor%}],
+            datasets: [{
+              label: "Number of Occurences",
+              data : [{% for info in assist_patterns %}
+                        {{ info.1 }},
+                      {% endfor%}],
+              backgroundColor: [
+                'rgb(99, 209, 242)'
+              ]
+            }]
+        }
+    });
+    </script>
     <h3> Records By Rounds </h3>
     <div class="play_game_container">
         {% for record in records_by_rounds %}
