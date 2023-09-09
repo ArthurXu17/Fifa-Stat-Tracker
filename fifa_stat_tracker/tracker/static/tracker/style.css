@@ -134,3 +134,18 @@ table.team-stats-table TBODY tr td.invisible_row {
 .bar_chart {
     width: 700px;
 }
+
+html, body, .home_page_container{
+    height: 95%;
+}
+
+.home_page_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home_page_header_containers {
+    display: block;
+    text-align: center;
+}
