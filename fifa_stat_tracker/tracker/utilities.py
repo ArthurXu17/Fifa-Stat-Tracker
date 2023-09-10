@@ -6,6 +6,13 @@ BODY_PART_OPTIONS = [
     ('Left Foot', 'Left Foot'),
     ('Right Foot', 'Right Foot')]
 
+# new constant to allow differentiation of Right and Left foot
+# keep old body part options within model since many entries still contain foot as body part
+UPDATED_BODY_PART_OPTIONS = [
+    ('Head', 'Head'),
+    ('Left Foot', 'Left Foot'),
+    ('Right Foot', 'Right Foot')]
+
 POSITION_OPTIONS = [
     ('LF', 'Left Forward'),
     ('CF', 'Centre Forward'),
